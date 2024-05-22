@@ -96,16 +96,92 @@
 // console.log(persona.direccion);
 
 
-// funcion contructora  para armar persona con toda su informacion
-// y dbajo con this. poniamos los parametro adelante para que despues creamos una persona nueva.
-// let persona1 que sea igual a new Persona llamabamos al nombre de la funcion con el new adelante y adentro de los parentesis
-// poniamos los datos de la persona que agregabamos
+// funcion contructora  para armar un objeto con toda su informacion, funcion Persona y los datos(nombre, edad, direccion)
+// y debajo con this. poniamos los parametro adelante para que despues creamos una persona nueva, que sean igual a los parametros tambien
+//Creamos la variable del nuevo objeto, let persona1 que sea igual a new Persona (o sea el nombre de la funcion con el prefijo new),
+// abrimos parentesis y dentro pondremos, los datos del objeto que queremos crear, y estos datos quedaran guardados en la variable.
 
 
-function Persona(nombre, edad, direccion) {
-    this.nombre = nombre,
-    this.edad = edad,
-    this.direccion = direccion,
-}
-let persona1 = new Persona("german", 38, av)
-console.log(persona1);
+// function Persona(nombre, edad, direccion) {
+//     this.nombre = nombre,
+//     this.edad = edad;
+//     this.direccion = direccion;
+// }
+
+// let persona1 = new Persona("german", 38, "av");
+// console.log(persona1);
+
+//Tambien la podemos hacer con una clase.
+//pondremos class Persona abrimos llaves, y pondremos dentro de las llaves la palabra constructor y por parametros pondremos,
+//los datos qwue queremos traer de los obajetos, y debajo el this. como en el anterior
+//Y podemos poner una funcion o un metodo,  creamos una funcion y le pasamos un mensaje y por ultimo le popndremos tambien la variable,
+// por ejemplo persona1 que sea igual  new persona y dentro de los parentesis los datos del obajeto.
+// con la funcion adentro y despúes la llamamos afuera con el pr3efijo de la nueva persona, a´parecera el mensaje.
+
+// class Persona{
+// constructor(nombre, edad, direccion) {  
+//     this.nombre = nombre,
+//     this.edad = edad;
+//     this.direccion = direccion;
+// }
+
+// hablar(){
+//     console.log("hablando "  +  this.nombre);
+// }
+// }
+
+// let persona1 = new Persona("german", 38, "av");
+// console.log(persona1.hablar());
+
+
+//arreglos
+//creamos un arreglo con los productos, y los podemos recorrerlo con un for, o el for of o el forEach, le pasamos al arreglo productos un forEach,
+// despues entre parentesis un item arrow function y un console.log del item, y me va a traer a tosdos los productos del arreglo.
+//y podemos pasarle varios metodos, filter, para filtrar, el find permite encontrar, y varios, hay que leeer la documentacion, y son de alto orden.
+// tabie
+
+// const productos = [
+//     {id: 1, producto: "arroz", precio: 100},
+//     {id: 2, producto: "fideos", precio: 105},
+//     {id: 3, producto: "pan", precio: 50},
+//     {id: 4, producto: "flan", precio: 70}
+// ];
+
+// //for, for of, y forEach
+
+// productos.forEach(item => console.log(item.producto ));
+
+
+// si queremos guardar en el localStorage y el sessionStorage, tienen varios metodos,
+//setItem para guardar y le pasmos la clave y el valor, getItem para tarer los datos del storage y le pasamos la clave, removeItem si queremos
+// borrar alguno en particular y le pondremos la clave, para borar todo clear() asi solo,
+// y esta el JSON.stringify que es para guardar el array en formato JSON y se le pasa el elemento que queremos pasar, y esta el JSON.parse que
+// es para traer los datos que habiamos guardado en el local o en el session, y le passmos el JSON que habiamos guardado.
+
+//DOM, creamos un arreglo, igual que el anterios, recorrermos con un  froEach() como en ejercicio anterios arrow function, y en las llaves pondremos
+// vamos a crear un div con una variablke que sea igual a document. que ete va hacer el puente entrre el html y js, seguido de createElement y
+// en los parentesis la etiqueta que queremos crear, "div" por ejemplo, y debajo pondremos div innerHTML que sea igual a los que queremos que aparesca
+// en la pantalla de nuestro sitio web, pondremos en bactic las etiquetas con las cuales queremos representar a nuestros datos en la pantalla,
+// entonces pondremos un <h2> para el item.id, le ponemos el item de prefijo ya que es el parametro que elegimos para la arrow function, <p> para el 
+//nombre del producto y <b> para el precio del producto del array, y fuera de los bactic llamaremos
+// a lo que acabamos de crear, necesita un padre, entonces pondremos debajo, document.body este sera el contenedor de nuestro div, seguido del append 
+// que este va a ser el encargado de agregarselo al padre, y entre parentesis el nuevo hijo creado div.
+
+const productos = [
+    {id: 1, producto: "arroz", precio: 100},
+    {id: 2, producto: "fideos", precio: 105},
+    {id: 3, producto: "pan", precio: 50},
+    {id: 4, producto: "flan", precio: 70}
+];
+
+
+productos.forEach(item => {
+    let div = document.createElement("div");
+    div.innerHTML = `
+                    <h2>${item.id}</h2>
+                    <p>${item.producto}</p>
+                    <b>${item.precio}</b>
+    `;
+
+    document.body.append(div);
+});
