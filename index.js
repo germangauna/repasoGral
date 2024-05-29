@@ -167,21 +167,90 @@
 // a lo que acabamos de crear, necesita un padre, entonces pondremos debajo, document.body este sera el contenedor de nuestro div, seguido del append 
 // que este va a ser el encargado de agregarselo al padre, y entre parentesis el nuevo hijo creado div.
 
-const productos = [
-    {id: 1, producto: "arroz", precio: 100},
-    {id: 2, producto: "fideos", precio: 105},
-    {id: 3, producto: "pan", precio: 50},
-    {id: 4, producto: "flan", precio: 70}
-];
+// const productos = [
+//     {id: 1, producto: "arroz", precio: 100},
+//     {id: 2, producto: "fideos", precio: 105},
+//     {id: 3, producto: "pan", precio: 50},
+//     {id: 4, producto: "flan", precio: 70}
+// ];
 
 
-productos.forEach(item => {
-    let div = document.createElement("div");
-    div.innerHTML = `
-                    <h2>${item.id}</h2>
-                    <p>${item.producto}</p>
-                    <b>${item.precio}</b>
-    `;
+// productos.forEach(item => {
+//     let div = document.createElement("div");
+//     div.innerHTML = `
+//                     <h2>${item.id}</h2>
+//                     <p>${item.producto}</p>
+//                     <b>${item.precio}</b>
+//     `;
 
-    document.body.append(div);
-});
+//     document.body.append(div);
+// });
+
+
+// hay ujn metodeo que se lalama el pripend se agrega arriba, y tambien  el innerText te muestra solo texto.
+
+
+// Ahora lo que vamos hacer es un formulario, iremos al html, con la etiqueta form dentro de esta ppondremos un ID con 
+// el nombre formulario, y depues tiene 3 inputs, el primetro dira type text, el segun}do type number, y el tercero tendra
+// un type que dira "submit" y seguido de value que este dira el mensaje del boton del formulario y terminara con la 
+// etiqueta de cierre de form.
+// nos permite recuperar cosas y guardarlos en nuestro javascript, ahora vamos al js, y creamos una variable formulario que sea igual
+// a document.getElementById del id que le pusimos como nombre "formulario" entre parentesis y debajo,
+// pondremos un escuchador de eventos, nombre de la variable y addEventListener y entre parentesis pondremos el
+// "submit"  entre comillas, seguido de un  arrow function , y tenemos que ponerle si o si para que recargue e.preventDefault(); 
+// y la (e) en los parentesis de la arrow function, si no pongo esto el fotmulario no se recargara. 
+// Ahora creamos otra variablñe inputs por ejemplo que sea igual a e.target.children este hara que ,me traiga la informacion, 
+// de los hijos que estan adentro de el fomulario,  entonces si hacemos un console.log de la variable inputs y ponemos la posicion
+// del hijo ue queremos ver por consola, [0] y seguido de la .value nos dara el valor mde los que escribieron en el formulario.
+
+let formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let inputs = e.target.children
+    console.log(inputs[0].value);
+    console.log(inputs[1].value);
+})
+
+
+
+mnhm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
